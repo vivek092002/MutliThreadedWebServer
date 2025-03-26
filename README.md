@@ -15,6 +15,14 @@ This Java application implements a multi-threaded web server capable of handling
 - Configuration: Easily configurable through properties files (server.properties).
 
 
+### How its work
+
+-Server starts and listens on a specified port (e.g., 8080).
+-For each client request, a new thread (from the pool) handles the connection.
+-The thread parses the HTTP request and fetches the requested file.
+-If the file exists, the server sends the response (HTML, CSS, JS, images, etc.).
+-If the file does not exist, it returns a 404 Not Found.
+-After handling the request, the thread closes the connection and becomes available for new clients.
 
 
 
